@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{title}}</title>
+<style>
+  body { margin: 0; font: 15px/1.5 "Segoe UI", system-ui, sans-serif; color: #1d2433; background: #fbfaf7; }
+  header { padding: 18px 40px; border-bottom: 3px double #1d2433; }
+  header b { font: 700 26px Georgia, serif; }
+  main { max-width: 720px; margin: 22px auto; padding: 0 24px; }
+  h1 { font: 700 22px Georgia, serif; margin: 0 0 6px; }
+  li { margin: 7px 0; }
+  footer { max-width: 720px; margin: 20px auto; padding: 0 24px; color: #6c7486; font-size: 13px; }
+</style>
+</head>
+<body>
+<header><b>The Harbour Gazette</b></header>
+<main>
+  <h1>{{heading}}</h1>
+  <p>{{intro}}</p>
+  <ul>
+{{items}}
+  </ul>
+</main>
+<footer>
+  <p>Published by the harbour office. Updated when there is news.</p>
+</footer>
+</body>
+</html>

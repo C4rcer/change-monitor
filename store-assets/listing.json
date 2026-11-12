@@ -1,0 +1,24 @@
+{
+  "slug": "heron-website-change-monitor",
+  "name": "Heron: Website Change Monitor",
+  "summary": "Get told when a web page changes. Watch a whole page or just one part, like a price or a stock notice, and see what was added and removed. Every check runs in your browser: no account, no cloud, no paid plan. Free, no ads, no tracking.",
+  "description": "Heron watches web pages for you and tells you when they change: a price, a stock notice, a news page, a timetable, a job board, release notes.\n\n**Watch**\n- A whole page, or one part of it: click the part on the page and Heron watches just that\n- Checks run in the background on the schedule you set for each watch, from every 5 minutes to once a week\n- Pause, resume or check any watch right now\n- Add pages from the toolbar button, or by address\n\n**See what changed**\n- A number on the toolbar button shows how many watches have something new\n- The change view shows what was added and what was removed, down to the words inside an edited line\n- The last 10 versions of each watch are kept, so you can look back\n- Optional desktop notifications, off until you switch them on\n\n**Everything stays in your browser**\n- No account, no server, no cloud: fetching, comparing and storing all happen on your device\n- Nothing is uploaded. The only requests Heron makes go straight to the pages you watch\n- Export and import your watch list as a file\n\n**Free, for real**\nEvery feature is unlocked for everyone: no paid plan and no quota of checks. No ads, no account, no analytics.\n\nIf Heron saves you checking pages by hand and you'd like to say thanks, there's a Ko-fi link in the popup. It's entirely optional and unlocks nothing.\n\n**Permissions**\nHeron asks for no access to your websites when you install it. When you add a watch, Firefox asks you to let Heron read that one site and nothing else. Delete the last watch for a site and Heron gives that access back.\n\n**Good to know**\n- Heron reads the HTML a site's server sends, without opening the page. Parts that a page draws later with JavaScript can't be seen that way. If you pick such a part, Heron tells you right away instead of silently watching nothing\n- Checks are made without your cookies, so Heron sees what a signed-out visitor sees. Pages behind a sign-in can't be watched. This is on purpose: a background check can never act on your account, and private pages never end up in the saved versions\n- Text is compared. A change in pictures or layout alone is not reported\n- Checks run while Firefox is open. Missed ones are caught up when it starts\n- The shortest interval is 5 minutes, to be gentle on the sites you watch. Up to 200 watches\n- Desktop Firefox only for now: it could not be tested on Firefox for Android, so it is not offered there",
+  "categories": {
+    "firefox": [
+      "alerts-updates",
+      "shopping"
+    ]
+  },
+  "compatibility": [
+    "firefox"
+  ],
+  "license": "MPL-2.0",
+  "homepage": "",
+  "support_url": "",
+  "contributions_url": "https://ko-fi.com/carcer7378",
+  "screenshot_captions": {
+    "1-changes.png": "See exactly what changed: added text in green, removed text in red, down to the word",
+    "2-popup.png": "Watch a whole page or one part of it, and see at a glance which watches have something new",
+    "3-pick.png": "Click the part you care about, like a price, and Heron watches just that"
+  }
+}

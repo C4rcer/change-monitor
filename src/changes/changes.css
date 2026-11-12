@@ -1,0 +1,56 @@
+body { font-size: 14px; }
+.top { display: flex; align-items: center; gap: 10px; max-width: 1040px; margin: 0 auto; padding: 18px 20px 6px; }
+.top .brand { font-size: 18px; gap: 8px; color: var(--fg); text-decoration: none; }
+.page { max-width: 1040px; margin: 0 auto; padding: 0 20px 48px; }
+.card { padding: 12px 16px; border: 1px solid var(--border); border-radius: 12px; }
+h1 { font-size: 20px; margin-top: 8px; overflow-wrap: anywhere; }
+h2 { font-size: 14px; }
+.where { margin-top: 2px; overflow-wrap: anywhere; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tools { margin: 12px 0 18px; }
+.line { display: inline-flex; align-items: center; gap: 6px; }
+
+.layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 720px) { .layout { grid-template-columns: 1fr; } }
+
+.versions { list-style: none; margin: 8px 0; padding: 0; }
+.versions li + li { margin-top: 4px; }
+.versions button {
+  display: block; width: 100%; padding: 7px 10px; border: 1px solid var(--border); border-radius: 9px;
+  background: var(--bg); text-align: left; cursor: pointer;
+}
+.versions button:hover { background: var(--bg2); }
+.versions button[aria-current="true"] { border-color: var(--accent); background: var(--changed-bg); }
+.versions .when { display: block; font-weight: 600; }
+.versions .what { display: block; color: var(--muted); font-size: 12px; }
+.versions .new { display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 999px; background: var(--accent); color: var(--accent-fg); font-size: 11px; font-weight: 700; }
+
+.diff-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.diff-head h2 { margin-right: auto; }
+.legend { margin: 6px 0; }
+.swatch { display: inline-block; width: 10px; height: 10px; margin: 0 2px 0 8px; border-radius: 3px; vertical-align: -1px; }
+.swatch:first-child { margin-left: 0; }
+.swatch.add { background: var(--ok-bg); border: 1px solid var(--ok); }
+.swatch.del { background: var(--bad-bg); border: 1px solid var(--bad); }
+
+.diff { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.diff .r { display: flex; gap: 8px; padding: 3px 12px 3px 6px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.diff .g { flex: 0 0 14px; text-align: center; color: var(--muted); font-weight: 700; user-select: none; }
+.diff .t { flex: 1; min-width: 0; }
+.diff .eq { color: var(--muted); }
+.diff .add { background: var(--ok-bg); }
+.diff .add .g { color: var(--ok); }
+.diff .del { background: var(--bad-bg); }
+.diff .del .g { color: var(--bad); }
+.diff .del .t { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--bad) 55%, transparent); }
+.diff .chg.old { background: color-mix(in srgb, var(--bad-bg) 45%, var(--bg)); }
+.diff .chg.old .g { color: var(--bad); }
+.diff .chg.new { background: color-mix(in srgb, var(--ok-bg) 45%, var(--bg)); }
+.diff .chg.new .g { color: var(--ok); }
+.diff del { background: var(--bad-bg); color: var(--bad); border-radius: 3px; text-decoration: line-through; }
+.diff ins { background: var(--ok-bg); color: var(--ok); border-radius: 3px; text-decoration: none; font-weight: 600; }
+.diff .skip { display: block; width: 100%; padding: 4px 12px; border: 0; border-block: 1px dashed var(--border); background: var(--bg2); color: var(--muted); font-size: 12px; text-align: center; cursor: pointer; }
+.diff .skip:first-child { border-top: 0; }
+.diff .skip:last-child { border-bottom: 0; }
+.diff .skip:hover { color: var(--fg); }
+.diff .none { padding: 14px 16px; color: var(--muted); }

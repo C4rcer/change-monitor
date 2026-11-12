@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heron: Website Change Monitor</title>
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="../shared/support.css">
+</head>
+<body>
+  <header>
+    <span class="brand"><img src="../icons/icon.svg" alt="" width="18" height="18"> Heron</span>
+    <a class="support-pill" data-support title="Free forever, no ads, no tracking. Tips keep it maintained."><span class="heart">&#x2665;</span> Support</a>
+    <button id="btnOptions" class="icon-btn" title="All watches and settings">&#x2699;</button>
+  </header>
+  <main>
+    <section id="here" class="here" aria-labelledby="hereTitle">
+      <div id="hereTitle" class="here-title"></div>
+      <div id="hereUrl" class="here-url"></div>
+      <div id="hereForm">
+        <label class="every">Check every <select id="hereEvery"></select></label>
+        <div class="here-buttons">
+          <button id="addPage" class="btn primary" type="button">Watch this page</button>
+          <button id="addPart" class="btn" type="button">Watch one part&hellip;</button>
+        </div>
+        <p id="hereNote" class="fine"></p>
+      </div>
+      <p id="hereMsg" class="note" role="status" hidden></p>
+    </section>
+
+    <section aria-labelledby="listTitle">
+      <div class="list-head">
+        <h2 id="listTitle">Watches <span id="count" class="fine"></span></h2>
+        <button id="seenAll" class="link" type="button" hidden>Mark all as seen</button>
+        <button id="checkAll" class="link" type="button" hidden>Check all now</button>
+      </div>
+      <ul id="list" class="watches"></ul>
+      <p id="empty" class="empty fine" hidden>Nothing is being watched yet. Open a page you care about and press &ldquo;Watch this page&rdquo;.</p>
+    </section>
+    <div id="supportCard" hidden></div>
+  </main>
+  <footer>
+    <button id="openApp" class="link" type="button">All watches, export and settings</button>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

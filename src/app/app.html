@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heron: watches and settings</title>
+  <link rel="icon" href="../icons/icon.svg">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="../shared/support.css">
+</head>
+<body>
+  <header class="top">
+    <span class="brand"><img src="../icons/icon.svg" alt="" width="22" height="22"> Heron <span class="sub">Website Change Monitor</span></span>
+    <a class="support-pill" data-support title="Free forever, no ads, no tracking. Tips keep it maintained."><span class="heart">&#x2665;</span> Support</a>
+  </header>
+  <main class="page">
+    <section aria-labelledby="hWatches">
+      <div class="sec-head">
+        <h2 id="hWatches">Watches <span id="count" class="fine"></span></h2>
+        <button id="seenAll" class="link" type="button" hidden>Mark all as seen</button>
+        <button id="checkAll" class="link" type="button" hidden>Check all now</button>
+      </div>
+      <ul id="list" class="watches card"></ul>
+      <p id="empty" class="card fine" hidden>Nothing is being watched yet. Open a page, click the Heron button in the toolbar and press &ldquo;Watch this page&rdquo;, or add an address below.</p>
+
+      <form id="addForm" class="card form" novalidate>
+        <h3>Add a page by its address</h3>
+        <div class="grid">
+          <label for="addUrl">Address</label>
+          <input id="addUrl" type="url" placeholder="https://example.com/page" autocomplete="off" spellcheck="false">
+          <label for="addName">Name</label>
+          <input id="addName" type="text" placeholder="Optional" maxlength="120">
+          <label for="addEvery">Check every</label>
+          <select id="addEvery"></select>
+          <label for="addSelector">Only one part</label>
+          <div>
+            <input id="addSelector" type="text" placeholder="Optional CSS selector, for example #price" autocomplete="off" spellcheck="false" maxlength="1000">
+            <p class="fine">Easier: open the page, click the Heron button in the toolbar and choose &ldquo;Watch one part&rdquo;.</p>
+          </div>
+        </div>
+        <div class="form-foot">
+          <button id="addGo" class="btn primary" type="submit">Add watch</button>
+          <span class="fine">Firefox will ask once to let Heron read that site.</span>
+        </div>
+        <p id="addMsg" class="note" role="status" hidden></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="hSettings">
+      <h2 id="hSettings">Settings</h2>
+      <div class="card">
+        <label class="line">Check new watches every <select id="defEvery"></select></label>
+        <label class="line"><input id="notify" type="checkbox"> Show a desktop notification when a watched page changes</label>
+        <p class="fine">Firefox asks for permission to show notifications when you switch this on. Heron uses them for changes only. The number on the toolbar button always shows how many watches have something new.</p>
+        <p id="settingsMsg" class="note warn" role="status" hidden></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hBackup">
+      <h2 id="hBackup">Export and import</h2>
+      <div class="card">
+        <div class="row">
+          <button id="exportGo" class="btn" type="button">Export the watch list</button>
+          <label class="btn" for="importFile">Import a watch list&hellip;</label>
+          <input id="importFile" class="visually-hidden" type="file" accept=".json,application/json">
+        </div>
+        <div id="importPreview" class="note" hidden>
+          <p id="importText"></p>
+          <div class="row">
+            <button id="importGo" class="btn primary" type="button">Import and allow these sites</button>
+            <button id="importCancel" class="btn" type="button">Cancel</button>
+          </div>
+        </div>
+        <p id="backupMsg" class="note" role="status" hidden></p>
+        <p class="fine">The file holds each watch's name, address, part and interval. Saved page text is not exported.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hLimits">
+      <h2 id="hLimits">What Heron can and can't see</h2>
+      <div class="card">
+        <ul class="plain">
+          <li><b>It reads the HTML the server sends.</b> Checks run in the background without opening the page, so nothing a page draws later with JavaScript is seen. If you pick such a part, Heron tells you right away instead of watching nothing.</li>
+          <li><b>It checks without your cookies.</b> Heron sees what a signed-out visitor sees, so pages behind a sign-in can't be watched. That is on purpose: a background check that used your sign-in could act on your account, and private pages would end up in the saved versions.</li>
+          <li><b>It compares text.</b> A change in pictures, layout or styling alone is not reported.</li>
+          <li><b>It runs while Firefox is open.</b> Checks that were due while Firefox was closed are done when it starts again.</li>
+          <li><b>It is gentle on sites.</b> The shortest interval is 5 minutes, and watches on the same site are checked one after another. Some sites still refuse automatic requests; those watches show &ldquo;Blocked&rdquo;.</li>
+          <li><b>It keeps storage small.</b> Up to 200 watches, the last 10 versions of each, and the first 100,000 characters of a page.</li>
+        </ul>
+        <p class="fine">Everything stays in this browser: no account, no server, nothing uploaded. The only requests Heron makes go straight to the pages you watch.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hSupport">
+      <h2 id="hSupport">Support</h2>
+      <div class="card">
+        <p>Heron is free, has no ads and collects no data. Every feature is unlocked for everyone. If it saves you checking pages by hand, a tip on Ko-fi keeps it maintained.</p>
+        <p class="pill-line"><a class="support-pill" data-support><span class="heart">&#x2665;</span> Support on Ko-fi</a></p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="editDialog" aria-labelledby="editTitle">
+    <form id="editForm" class="form" method="dialog" novalidate>
+      <h3 id="editTitle">Edit watch</h3>
+      <div class="grid">
+        <label for="editName">Name</label>
+        <input id="editName" type="text" maxlength="120">
+        <label for="editUrl">Address</label>
+        <input id="editUrl" type="url" autocomplete="off" spellcheck="false">
+        <label for="editEvery">Check every</label>
+        <select id="editEvery"></select>
+        <label for="editSelector">Only one part</label>
+        <div>
+          <input id="editSelector" type="text" placeholder="CSS selector; empty watches the whole page" autocomplete="off" spellcheck="false" maxlength="1000">
+          <p class="fine">Changing the address or the part starts over: the saved versions of this watch are cleared.</p>
+        </div>
+      </div>
+      <p id="editMsg" class="note warn" role="status" hidden></p>
+      <div class="form-foot end">
+        <button id="editCancel" class="btn" type="button">Cancel</button>
+        <button id="editSave" class="btn primary" type="button">Save</button>
+      </div>
+    </form>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

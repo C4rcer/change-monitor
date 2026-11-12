@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heron: what changed</title>
+  <link rel="icon" href="../icons/icon.svg">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="changes.css">
+  <link rel="stylesheet" href="../shared/support.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" id="home" href="../app/app.html" title="All watches"><img src="../icons/icon.svg" alt="" width="22" height="22"> Heron</a>
+    <a class="support-pill" data-support title="Free forever, no ads, no tracking. Tips keep it maintained."><span class="heart">&#x2665;</span> Support</a>
+  </header>
+  <main class="page">
+    <p id="gone" class="card" hidden>This watch does not exist any more. <a href="../app/app.html">See all watches</a></p>
+    <div id="view" hidden>
+      <h1 id="name"></h1>
+      <p class="where"><a id="url" target="_blank" rel="noopener"></a></p>
+      <p id="meta" class="fine"></p>
+      <p id="problem" class="note warn" hidden></p>
+      <div class="row tools">
+        <button id="check" class="btn" type="button">Check now</button>
+        <a id="open" class="btn" target="_blank" rel="noopener">Open the page</a>
+        <a id="edit" class="btn">Edit</a>
+        <span id="checkMsg" class="fine" role="status"></span>
+      </div>
+
+      <div class="layout">
+        <nav aria-label="Changes">
+          <h2>Changes</h2>
+          <ol id="versions" class="versions"></ol>
+          <p id="kept" class="fine"></p>
+        </nav>
+        <section aria-labelledby="diffTitle">
+          <div class="diff-head">
+            <h2 id="diffTitle"></h2>
+            <span id="counts" class="fine"></span>
+            <label class="line fine"><input id="showAll" type="checkbox"> Show unchanged text too</label>
+          </div>
+          <div id="legend" class="fine legend"><span class="swatch add"></span> added <span class="swatch del"></span> removed</div>
+          <div id="diff" class="diff" aria-live="polite"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="changes.js"></script>
+</body>
+</html>
