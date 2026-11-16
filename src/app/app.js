@@ -1,6 +1,7 @@
 // The dashboard: every watch, adding by address, editing, settings, export and
 // import. Like the popup it only reads storage; the background makes the changes.
 import { wireSupportLinks } from "../shared/support.js";
+import { renderMoreAddons } from "../shared/more-addons.js";
 import { DEFAULT_SETTINGS, KEYS, LIMITS } from "../shared/config.js";
 import { isWatchable, originPattern, hostOf, fillIntervals, clampInterval, send } from "../shared/util.js";
 import { createList } from "../shared/list.js";
@@ -277,6 +278,7 @@ $("importGo").addEventListener("click", async () => {
 // -------------------------------------------------------------------- wiring
 
 wireSupportLinks();
+renderMoreAddons(document.getElementById("moreAddons")).catch(() => {});
 
 $("seenAll").addEventListener("click", () => send("seen:all"));
 $("checkAll").addEventListener("click", async () => {
