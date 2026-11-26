@@ -13,8 +13,8 @@
     "firefox"
   ],
   "license": "MPL-2.0",
-  "homepage": "",
-  "support_url": "",
+  "homepage": "https://github.com/C4rcer/change-monitor",
+  "support_url": "https://github.com/C4rcer/change-monitor/issues",
   "contributions_url": "https://ko-fi.com/carcer7378",
   "screenshot_captions": {
     "1-changes.png": "See exactly what changed: added text in green, removed text in red, down to the word",

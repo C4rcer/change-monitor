@@ -156,7 +156,7 @@ src/                       everything that ships
   shared/list.js           the watch list used by popup and dashboard
   shared/util.js           small helpers
   shared/base.css          colors, buttons, list
-  shared/support.*         Ko-fi pill + one-time milestone card (from the template)
+  shared/support.*         Ko-fi pill + one-time milestone card: a rating ask first, tips later (from the template)
   shared/more-addons.*     "More free add-ons" card + rate link (same file in every add-on; set `live: true` as listings are approved)
   icons/icon.svg           toolbar and add-on icon
   icons/icon-96.png        the same icon for notifications (tools/make_icon_png.py)

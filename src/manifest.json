@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Heron: Website Change Monitor",
   "short_name": "Heron",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Watch a web page, or one part of it, and get told when it changes. Every check runs in your browser: no account, no server. Free, no ads, no tracking.",
   "browser_specific_settings": {
     "gecko": {

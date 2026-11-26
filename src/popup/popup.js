@@ -200,5 +200,5 @@ setInterval(renderList, 30000); // keeps "5 min ago" honest while the popup stay
   send("sync"); // puts the badge and the alarm right if Firefox dropped them
   const stats = (await browser.storage.local.get(KEYS.stats))[KEYS.stats] || {};
   maybeShowMilestone($("supportCard"), stats.changes || 0, [10, 100], (m) =>
-    `Heron has caught ${m} changes for you. It's free and ad-free; if it saves you checking pages by hand, a coffee keeps it maintained.`);
+    `Heron has caught ${m} changes for you.`);
 })();
